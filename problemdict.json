@@ -1,10 +1,10 @@
 {
     "Maximize Revenue": {
         "variable_keywords": {
-            "base_itemprice": ["price", "cost", "item", "", "", ""], 
-            "delta_itemprice": ["increase", "decrease", "dollar", "cent", "cost"],
-            "base_personcount": ["attendance", "consumers", "count", "number", "people", "amount"],
-            "delta_personcount": ["increase", "decrease", "fewer", "more", "demand", "want"]
+            "base_itemprice": ["price", "cost", "item"], 
+            "delta_itemprice": ["increase", "decrease", "more", "less", "dollar", "cent", "cost", "price", "item", "ever"],
+            "base_personcount": ["attendance", "consumers", "count", "number", "original", "people", "amount"],
+            "delta_personcount": ["increase", "decrease", "fewer", "more", "demand", "want", "down", "up", "people"]
         },
         "functionName": "MaximizeRevenue_function"
     }
