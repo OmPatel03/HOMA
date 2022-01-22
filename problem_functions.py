@@ -4,7 +4,7 @@ def MaximizeRevenue_function(listOfVariables):
         Returns the price of some item which maximizes the revenue based off the demand.
     '''
 
-    #Unpack
+    #Unpack from given variable list
     base_itemprice      = listOfVariables[0];
     delta_itemprice     = listOfVariables[1];
     base_personcount    = listOfVariables[2];
@@ -12,10 +12,13 @@ def MaximizeRevenue_function(listOfVariables):
 
     #From Calculations
     #X denotes the amount of dollar increases
-    x = (base_itemprice*delta_personcount - delta_itemprice*base_personcount) / (2*delta_itemprice*delta_personcount)
+    x = (delta_itemprice*base_personcount - base_itemprice*delta_personcount) / (2*delta_itemprice*delta_personcount)
+
+    #Debug
+    #print("Increases Found: " + str(x))
 
     #Calculate max Item price
-    max_rev_item_price = base_itemprice + x*delta_itemprice;
+    maxRevenueItemPrice = base_itemprice + x*delta_itemprice;
 
     #Return Value
-    return max_rev_item_price;
+    return maxRevenueItemPrice;
