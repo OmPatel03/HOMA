@@ -8,4 +8,13 @@
         },
         "functionName": "MaximizeRevenue_function"
     }
+    ,
+    "Interest": {
+        "variable_keywords": {
+            "principle" : ["starting", "principle", "final"],
+            "interest_rate" : ["interest", "rate"],
+            "time" : ["years"]
+        },
+        "functionName": "Interest_function"
+    }
 }
