@@ -1,5 +1,6 @@
 from loadjson import getProblemDictionary;
 #from speech import *;
+from image_reader import readImage
 
 #Main Loop
 if (__name__ == "__main__"):
@@ -10,6 +11,8 @@ if (__name__ == "__main__"):
 
     #
     #Get String from Speech or Image
+    file_path = "path of the file we want to read and extract the text from"
+    imageText = readImage(file_path)
 
     #
     #Decide what type of function the string denotes
