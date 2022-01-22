@@ -7,8 +7,8 @@ def getProblemDictionary():
     problemDict = {};
 
     #Get The Current Folder Path + Find the Dictonary
-    directory_path = os.getcwd()
-    jsonFileLocation = directory_path + "\problemdict.json";
+    directoryPath = os.getcwd()
+    jsonFileLocation = directoryPath + "\problemdict.json";
 
     #Open File + Load
     with open(jsonFileLocation, "r") as f:
