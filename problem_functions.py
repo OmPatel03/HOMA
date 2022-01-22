@@ -26,6 +26,10 @@ def MaximizeRevenue_function(listOfVariables):
 
 
 def Interest_function(listOfVariables):
+    """
+    Returns the final amount after a compounding interest period.
+    """
+
     principle = listOfVariables[0]
     interest_rate = listOfVariables[1]
     time = listOfVariables[2]
