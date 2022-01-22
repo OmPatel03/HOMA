@@ -1,18 +1,15 @@
-from loadjson import getProblemDictionary
-#from speech import *
-from image_reader import readImage
+from loadjson import getProblemDictionary;
+#from speech import *;
 
 #Main Loop
 if (__name__ == "__main__"):
 
     #
     #Import
-    problemDict = getProblemDictionary()
+    problemDict = getProblemDictionary();
 
     #
     #Get String from Speech or Image
-    file_path = "path of the file we want to read and extract text from"
-    imageText = readImage(file_path)
 
     #
     #Decide what type of function the string denotes
@@ -28,4 +25,7 @@ if (__name__ == "__main__"):
 
     #
     #Create a stringified version to send back to the person.
+
+
+    #end
     pass
