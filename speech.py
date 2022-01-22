@@ -61,7 +61,7 @@ async def send_receive():
                 try:
                     result_str = await _ws.recv()
                     if json.loads(result_str)["message_type"] == "FinalTranscript":
-                        return(json.loads(result_str)["text"])
+                        print(json.loads(result_str)["text"])
                 except websockets.exceptions.ConnectionClosedError as e:
                     print(e)
                     assert e.code == 4008
