@@ -1,8 +1,10 @@
 import json
 import base64
 import asyncio
+from unittest import result
 import websockets
 import pyaudio
+
 
 FRAMES_PER_BUFFER = 3200
 FORMAT = pyaudio.paInt16
@@ -61,14 +63,26 @@ async def send_receive():
                 try:
                     result_str = await _ws.recv()
                     if json.loads(result_str)["message_type"] == "FinalTranscript":
+                        print("Transcription ended")
                         print(json.loads(result_str)["text"])
+                        raise Exception
+
                 except websockets.exceptions.ConnectionClosedError as e:
                     print(e)
                     assert e.code == 4008
                     break
                 except Exception as e:
+                    pass
                     assert False, "Not a websocket 4008 error"
+        print("dwaudha")
+        return await asyncio.gather(send(), receive())
+        print("received result")
 
-        send_result, receive_result = await asyncio.gather(send(), receive())
 
-asyncio.run(send_receive())
+def run():
+    print("ww")
+    print(asyncio.run(send_receive()))
+    print("gg")
+
+
+run()
