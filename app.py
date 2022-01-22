@@ -9,7 +9,7 @@ if (__name__ == "__main__"):
     problemDict = getProblemDictionary();
 
     #
-    #Get String from Speech
+    #Get String from Speech or Image
 
 
     #
