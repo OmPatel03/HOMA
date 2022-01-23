@@ -49,8 +49,19 @@ if (__name__ == "__main__"):
 
     if user_input:
         final, variables = compute_word_problem(user_input)
+        st.markdown("#### " + final)
+        if type(variables) == dict:
+            st.markdown("""
+                    <style>
+                    .big-font {
+                        font-size:15px !important;
+                        color: #5A6370
+                        font-family: "Times New Roman", Times, serif;
 
-        for variable in variables:
-            st.markdown(variable + " : " + str(variables[variable]))
+                        }
+                        </style>
+                        """, unsafe_allow_html=True)
+            for variable in variables:
 
-        st.markdown("#### " + compute_word_problem(final))
+                st.markdown("<p class = 'big-font'>" + variable + " : " + "" +
+                            str(variables[variable]) + "" + "</p>", unsafe_allow_html=True)
