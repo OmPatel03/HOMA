@@ -53,5 +53,5 @@ def compute_word_problem(problemString):
     except Exception as e:
         return "I cannot answer that type of question."
 
-test = "if for every 1 dollar increase there will be 10 less people that buy the porduct and if the product costs 5 dollars originally and 10 people buy it now, maximum revenue"
-print(compute_word_problem(test))
+#test = "if for every 1 dollar increase there will be 10 less people that buy the porduct and if the product costs 5 dollars originally and 10 people buy it now, maximum revenue"
+#print(compute_word_problem(test))
