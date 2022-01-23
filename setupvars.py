@@ -22,8 +22,8 @@ def create_list(typeKey, problem_string, problem_dict = getProblemDictionary()):
     #Count
     variableAmount = len(variableIdentifierWords);
     variableAmountRange = range(variableAmount);
-    #if (len(variablesAsAssignment) != variableAmount):
-        #raise DimentionError
+    if (len(variablesAsAssignment) != variableAmount):
+        raise DimentionError
     
     #
     #
