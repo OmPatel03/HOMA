@@ -1,4 +1,4 @@
-def functionType(s):
+def get_function_from_string(s):
     mx =0
     intrs = 0
     mn = 0
