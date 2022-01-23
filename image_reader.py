@@ -1,4 +1,5 @@
 # Import cv2 and pytesseract libraries
+'''
 import cv2 
 from pytesseract import pytesseract 
 
@@ -29,3 +30,4 @@ def readImage():
   cam.release() 
   cv2.destroyAllWindows() 
   return tesseract()
+'''
