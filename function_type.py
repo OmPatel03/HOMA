@@ -18,8 +18,8 @@ def get_function_from_string(s):
     if max(li) == 0:
         return "This Type of function cannot be evaluated yet"
     elif max(li) == mx:
-        return "Maximum Revenue"
+        return "Maximize Revenue"
     elif max(li)== mn:
-        return "Minimum Revenue"
+        return "Minimize Revenue"
     elif max(li)== intrs:
         return "Interest"

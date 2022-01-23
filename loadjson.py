@@ -17,7 +17,6 @@ def getProblemDictionary():
     #Return Dictonary
     return problemDict;
 
-def getProblemFunction(key, dictt = getProblemDictionary()):
-    functionName = dictt[key]["functionName"];
-    print(functionName)
-    return functionName;
+def getFromKeyDict(key, subkey, dictt = getProblemDictionary()):
+    result = dictt[key][subkey];
+    return result;
