@@ -19,8 +19,8 @@ def formatStringFromVars(problemFormatString, problemVariablesToFill, problemVar
         tail = problemVariablesToFill[1:length]
 
         #Update to be answer
-        if (head == -1):
-            head = answer
+        if (head < 0):
+            head = answer[-head-1]
 
         #Format from the string
         headStr = problemVariableFormats[0].format(head)
@@ -32,4 +32,12 @@ def formatStringFromVars(problemFormatString, problemVariablesToFill, problemVar
     else:
         return problemFormatString
 
-    
+
+def answer_create_variable_name_dict(variableNames, variableList):
+    '''
+    Create a dictionary containing the variable's name and the value used in the calculation
+    '''
+    answerVarDict = {}
+    for i in range(len(variableList)):
+        answerVarDict[variableNames[i]] = variableList[i];
+    return answerVarDict

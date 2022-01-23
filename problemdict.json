@@ -2,22 +2,22 @@
     "Maximize Revenue": {
         "problem_keywords": ["Maximize"],
         "variable_keywords": {
-            "base_itemprice": ["price", "cost", "item"], 
-            "delta_itemprice": ["increase", "decrease", "more", "less", "dollar", "cent", "cost", "price", "item", "ever"],
-            "base_personcount": ["attendance", "consumers", "count", "number", "original", "people", "amount"],
-            "delta_personcount": ["increase", "decrease", "fewer", "more", "demand", "want", "down", "up", "people"]
+            "Original Item Price": ["price", "cost", "item", "product"], 
+            "Change in Item Price Multilpier": ["increase", "decrease", "more", "less", "dollar", "cent", "cost", "price", "item", "ever", "product"],
+            "Original Customer Base Size": ["attendance", "consumers", "count", "number", "original", "people", "amount", "person"],
+            "Customer Reduction Per Price Increase": ["increase", "decrease", "fewer", "more", "demand", "want", "down", "up", "people"]
         },
         "functionName": "MaximizeRevenue_function",
-        "formattedString": "The max revenue will occur when the item's price is {}",
-        "formattedVariables": [-1],
-        "variableFormats": ["${:.2f}"]
+        "formattedString": "The max revenue will occur when the item's price is {}, with a maximum revenue of {}",
+        "formattedVariables": [-1, -2],
+        "variableFormats": ["${:.2f}", "${:.2f}"]
     }
     ,
     "Interest": {
         "variable_keywords": {
-            "principle" : ["starting", "principle", "principal", "final", "amount"],
-            "interest_rate" : ["interest", "rate", "compound"],
-            "time" : ["years"]
+            "Principle" : ["starting", "principle", "principal", "final", "amount"],
+            "Interest Rate" : ["interest", "rate", "compound"],
+            "Time" : ["years"]
         },
         "functionName": "Interest_function",
         "formattedString": "After {} years, the final amount in the accound will be {}",

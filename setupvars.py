@@ -8,8 +8,11 @@ class DimentionError(Exception):
 def create_list(typeKey, problem_string, problem_dict = getProblemDictionary()):
 
     #Grab Sub Dictionary From Dict
+    print("Getting type {}".format(typeKey))
+    
     typeDict = problem_dict.get(typeKey, "")
     if (type(typeDict) != dict):
+        print("Not a Dictonary")
         raise TypeError
     variableDict = typeDict["variable_keywords"]
     variableIdentifierWords = list(variableDict.values());

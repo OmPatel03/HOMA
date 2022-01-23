@@ -1,16 +1,26 @@
-import pytesseract
-import cv2
 
-def readImage(file_path): 
+import cv2 
+from pytesseract import pytesseract 
   
-  pytesseract.pytesseract.tesseract_cmd = "C:\Program Files\Tesseract-OCR\tesseract.exe" 
+def tesseract(): 
   
-  # Reading image 
-  img = cv2.imread(file_path) 
-  
-  # Convert to RGB 
+  path_to_tesseract = r"C:\Program Files\Tesseract-OCR\tesseract.exe" 
+  Imagepath = 'test1.jpg' 
+  img = cv2.imread('test1.jpg') 
   img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB) 
-  
-  # Detect texts from image 
-  texts = pytesseract.image_to_string(img) 
-  print(texts)
+  pytesseract.tesseract_cmd = path_to_tesseract 
+  text = pytesseract.image_to_string(img) 
+  print (text[:-1]) 
+    
+def readImage(): 
+  cam = cv2.VideoCapture(0, cv2.CAP_DSHOW) 
+  while True: 
+    _,Image = cam.read() 
+    cv2.imshow('Text detection', Image) 
+    if cv2.waitKey(1)& 0xFF==ord('s'): 
+      cv2.imwrite('test1.jpg', Image) 
+      break 
+    
+  cam.release() 
+  cv2.destroyAllWindows() 
+  return tesseract()
