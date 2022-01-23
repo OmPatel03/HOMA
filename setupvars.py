@@ -137,7 +137,3 @@ def split_by_numbers(problem_string):
     #Return List
     print(returnList)
     return returnList
-
-inputString = "Find the final amount if the principal amount is 2000 if the interest rate is 3% and is for 5 years.";
-#split_by_numbers(inputString)
-create_list("Interest", inputString);
