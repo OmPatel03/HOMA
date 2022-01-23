@@ -1,13 +1,13 @@
-from loadjson import getProblemDictionary;
 #from speech import *;
 from image_reader import readImage
+from string_solve import compute_word_problem;
+
 
 #Main Loop
 if (__name__ == "__main__"):
 
     #
     #Import
-    problemDict = getProblemDictionary();
 
     #
     #Get String from Speech or Image
@@ -15,20 +15,8 @@ if (__name__ == "__main__"):
     imageText = readImage(file_path)
 
     #
-    #Decide what type of function the string denotes
-
-
-    #
-    #Seperate the Speech Speach string into it's key variables based on the type of function
-
-
-    #
-    #Exectue the function using the variables
-
-
-    #
-    #Create a stringified version to send back to the person.
-
+    #Compute
+    result = compute_word_problem(imageText)
 
     #end
     pass
