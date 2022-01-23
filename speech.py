@@ -5,7 +5,10 @@ from unittest import result
 from numpy import result_type
 import websockets
 import pyaudio
+from dotenv import find_dotenv, load_dotenv
+import os
 
+load_dotenv(find_dotenv())
 
 FRAMES_PER_BUFFER = 3200
 FORMAT = pyaudio.paInt16
@@ -22,7 +25,7 @@ stream = p.open(
     frames_per_buffer=FRAMES_PER_BUFFER
 )
 
-auth_key = "a263ac190b6f47a0bc21882f367ee992"
+auth_key = os.getenv("auth_key")
 
 # the AssemblyAI endpoint we're going to hit
 URL = "wss://api.assemblyai.com/v2/realtime/ws?sample_rate=16000"

@@ -49,4 +49,4 @@ if (__name__ == "__main__"):
     # Create a stringified version to send back to the person.
 
     if user_input:
-        st.markdown(compute_word_problem(user_input))
+        st.markdown("#### " + compute_word_problem(user_input))
