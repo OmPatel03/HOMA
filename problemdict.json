@@ -11,8 +11,8 @@
     ,
     "Interest": {
         "variable_keywords": {
-            "principle" : ["starting", "principle", "final"],
-            "interest_rate" : ["interest", "rate"],
+            "principle" : ["starting", "principle", "principal", "final", "amount"],
+            "interest_rate" : ["interest", "rate", "compound"],
             "time" : ["years"]
         },
         "functionName": "Interest_function"

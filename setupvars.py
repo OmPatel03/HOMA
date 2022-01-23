@@ -139,6 +139,6 @@ def split_by_numbers(problem_string):
     print(returnList)
     return returnList
 
-inputString = "Maximize the revenue if the ticket price is $6 and the original number of 2000 people decrease by a 100 every increase of $1 in ticket price";
+inputString = "Find the final amount if the principal amount is 2000 if the interest rate is 3% and is for 5 years.";
 #split_by_numbers(inputString)
-create_list("Maximize Revenue", inputString);
+create_list("Interest", inputString);
