@@ -32,6 +32,7 @@ working = True
 
 async def send_receive():
     global working
+    working = True
     print(f'Connecting websocket to url ${URL}')
     async with websockets.connect(
         URL,
@@ -46,8 +47,8 @@ async def send_receive():
         print("Sending messages ...")
 
         async def send():
-            global working
             while working:
+
                 try:
                     data = stream.read(FRAMES_PER_BUFFER)
                     data = base64.b64encode(data).decode("utf-8")
@@ -68,24 +69,21 @@ async def send_receive():
             while working:
                 try:
                     result_str = await _ws.recv()
-                    if json.loads(result_str)["message_type"] == "FinalTranscript":
-                        working = not working
-                        print("Transcription ended")
-                        # print(json.loads(result_str)["text"])
-                        msg = json.loads(result_str)["text"]
-                        with open("text.txt", 'w') as f:
+                    if json.loads(result_str)['message_type'] == "FinalTranscript":
+                        msg = json.loads(result_str)['text']
+                        with open("text.txt", "w") as f:
                             f.write(msg)
+                        working = not working
 
                 except websockets.exceptions.ConnectionClosedError as e:
                     print(e)
                     assert e.code == 4008
                     break
                 except Exception as e:
-                    pass
                     assert False, "Not a websocket 4008 error"
 
-        await asyncio.gather(send(), receive())
+        send_result, receive_result = await asyncio.gather(send(), receive())
 
 
 def run():
-    print(asyncio.run(send_receive()))
+    asyncio.run(send_receive())

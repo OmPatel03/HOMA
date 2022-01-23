@@ -1,6 +1,6 @@
 from speech import *
 
-send_receive()
+run()
 
 with open("text.txt", 'r') as f:
     msg = f.read()

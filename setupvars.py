@@ -59,7 +59,7 @@ def create_list(typeKey, problem_string, problem_dict = getProblemDictionary()):
                     if (variableWord in identifiers):
 
                         #Save Any Matches
-                        print("match for value {} found in the {}th variable using word '{}'".format(variableValue, (i+1), variableWord))
+                        #print("match for value {} found in the {}th variable using word '{}'".format(variableValue, (i+1), variableWord))
                         varInfoMatchInfo[i] = varInfoMatchInfo[i]+1;
 
         #End
