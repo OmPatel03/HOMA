@@ -20,7 +20,7 @@
             "Time" : ["years"]
         },
         "functionName": "Interest_function",
-        "formattedString": "After {} years, the final amount in the accound will be {}",
+        "formattedString": "After {} years, the final amount in the account will be {}",
         "formattedVariables": [3, -1],
         "variableFormats": ["{}", "${:.2f}"]
     }

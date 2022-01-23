@@ -22,7 +22,7 @@ if (__name__ == "__main__"):
     st.title("HOMA")
 
     user_input = st.text_input(
-        "Type")
+        "Type in or say a business-related mathematical problem and HOMA will attempt to solve it!")
     if st.button("Record speech"):
         st.write("Recording...")
         user_input = get_speech()
