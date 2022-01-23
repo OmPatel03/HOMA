@@ -1,22 +1,24 @@
 import json
 import os
 
+
 def getProblemDictionary():
 
-    #Initialize
-    problemDict = {};
+    # Initialize
+    problemDict = {}
 
-    #Get The Current Folder Path + Find the Dictonary
+    # Get The Current Folder Path + Find the Dictonary
     directoryPath = os.getcwd()
-    jsonFileLocation = directoryPath + "\problemdict.json";
+    jsonFileLocation = directoryPath + "/problemdict.json"
 
-    #Open File + Load
+    # Open File + Load
     with open(jsonFileLocation, "r") as f:
-        problemDict = json.load(f);
+        problemDict = json.load(f)
 
-    #Return Dictonary
-    return problemDict;
+    # Return Dictonary
+    return problemDict
 
-def getFromKeyDict(key, subkey, dictt = getProblemDictionary()):
-    result = dictt[key][subkey];
-    return result;
+
+def getFromKeyDict(key, subkey, dictt=getProblemDictionary()):
+    result = dictt[key][subkey]
+    return result
