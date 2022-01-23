@@ -22,7 +22,8 @@ def compute_word_problem(problemString):
 
         #
         # Exectue the function using the variables
-        problemScript = (getFromKeyDict(functionType, "functionName", problemDict))
+        problemScript = (getFromKeyDict(
+            functionType, "functionName", problemDict))
         result = runScript(problemScript, variableList)
 
         #
@@ -39,6 +40,9 @@ def compute_word_problem(problemString):
         print(formattedString)
         return formattedString
 
-    #Overrall Error Handeling
+    # Overrall Error Handeling
     except Exception:
         return "I cannot answer that type of question."
+
+
+print(compute_word_problem("Maximize the revenue if the ticket price is $6 and the original number of 2000 people decrease by a 100 every increase of $1 in ticket price"))
