@@ -2,6 +2,7 @@ import json
 import base64
 import asyncio
 from unittest import result
+from numpy import result_type
 import websockets
 import pyaudio
 
@@ -26,8 +27,11 @@ auth_key = "a263ac190b6f47a0bc21882f367ee992"
 # the AssemblyAI endpoint we're going to hit
 URL = "wss://api.assemblyai.com/v2/realtime/ws?sample_rate=16000"
 
+working = True
+
 
 async def send_receive():
+    global working
     print(f'Connecting websocket to url ${URL}')
     async with websockets.connect(
         URL,
@@ -42,7 +46,8 @@ async def send_receive():
         print("Sending messages ...")
 
         async def send():
-            while True:
+            global working
+            while working:
                 try:
                     data = stream.read(FRAMES_PER_BUFFER)
                     data = base64.b64encode(data).decode("utf-8")
@@ -59,13 +64,17 @@ async def send_receive():
             return True
 
         async def receive():
-            while True:
+            global working
+            while working:
                 try:
                     result_str = await _ws.recv()
                     if json.loads(result_str)["message_type"] == "FinalTranscript":
+                        working = not working
                         print("Transcription ended")
-                        print(json.loads(result_str)["text"])
-                        raise Exception
+                        # print(json.loads(result_str)["text"])
+                        msg = json.loads(result_str)["text"]
+                        with open("text.txt", 'w') as f:
+                            f.write(msg)
 
                 except websockets.exceptions.ConnectionClosedError as e:
                     print(e)
@@ -74,15 +83,9 @@ async def send_receive():
                 except Exception as e:
                     pass
                     assert False, "Not a websocket 4008 error"
-        print("dwaudha")
-        return await asyncio.gather(send(), receive())
-        print("received result")
+
+        await asyncio.gather(send(), receive())
 
 
 def run():
-    print("ww")
     print(asyncio.run(send_receive()))
-    print("gg")
-
-
-run()
