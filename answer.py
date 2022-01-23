@@ -22,7 +22,7 @@ def formatStringFromVars(problemFormatString, problemVariablesToFill, problemVar
         if (head == -1):
             head = answer
 
-        #
+        #Format from the string
         headStr = problemVariableFormats[0].format(head)
 
         formatString = problemFormatString.replace("{}", headStr, 1)
