@@ -36,8 +36,15 @@ def compute_word_problem(problemString):
         formattedString = formatStringFromVars(
             problemFormatString, problemVariablesToFill, problemVariableFormats, result)
 
-        print(formattedString)
-        return formattedString
+        #Collect Variables Into a Dictonary
+        answerVarDict = {}
+        variableNames = list(getFromKeyDict(functionType, "variable_keywords", problemDict).keys())
+        for i in range(len(variableList)):
+            answerVarDict[variableNames[i]] = variableList[i];
+
+        finalResult = (formattedString, answerVarDict)
+        print(finalResult)
+        return finalResult
 
     #Overrall Error Handeling
     except Exception:
