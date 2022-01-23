@@ -21,7 +21,8 @@ def get_speech():
 if (__name__ == "__main__"):
     st.title("HOMA")
 
-    user_input = st.text_input("Math Problem")
+    user_input = st.text_input(
+        "Type")
     if st.button("Record speech"):
         st.write("Recording...")
         user_input = get_speech()
@@ -56,7 +57,7 @@ if (__name__ == "__main__"):
                     .big-font {
                         font-size:15px !important;
                         color: #5A6370
-                        font-family: "Times New Roman", Times, serif;
+                        
 
                         }
                         </style>
