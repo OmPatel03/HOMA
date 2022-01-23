@@ -1,7 +1,14 @@
+<<<<<<< HEAD
 from loadjson import getProblemDictionary
 #from speech import *;
 from image_reader import readImage
 import streamlit as st
+=======
+#from speech import *;
+from image_reader import readImage
+from string_solve import compute_word_problem;
+
+>>>>>>> ee36c0e07a1883d362fa65407b2c8ae60ffafa1b
 
 # Main Loop
 if (__name__ == "__main__"):
@@ -10,8 +17,12 @@ if (__name__ == "__main__"):
     user_input = st.text_input("Math Problem")
 
     #
+<<<<<<< HEAD
     # Import
     problemDict = getProblemDictionary()
+=======
+    #Import
+>>>>>>> ee36c0e07a1883d362fa65407b2c8ae60ffafa1b
 
     #
     # Get String from Speech or Image
@@ -19,6 +30,7 @@ if (__name__ == "__main__"):
     #imageText = readImage(file_path)
 
     #
+<<<<<<< HEAD
     # Decide what type of function the string denotes
 
     #
@@ -29,6 +41,10 @@ if (__name__ == "__main__"):
 
     #
     # Create a stringified version to send back to the person.
+=======
+    #Compute
+    result = compute_word_problem(imageText)
+>>>>>>> ee36c0e07a1883d362fa65407b2c8ae60ffafa1b
 
     # end
     pass

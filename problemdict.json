@@ -1,5 +1,6 @@
 {
     "Maximize Revenue": {
+        "problem_keywords": ["Maximize"],
         "variable_keywords": {
             "base_itemprice": ["price", "cost", "item"], 
             "delta_itemprice": ["increase", "decrease", "more", "less", "dollar", "cent", "cost", "price", "item", "ever"],
