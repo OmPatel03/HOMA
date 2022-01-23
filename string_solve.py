@@ -42,7 +42,3 @@ def compute_word_problem(problemString):
     #Overrall Error Handeling
     except Exception:
         return "I cannot answer that type of question."
-
-
-inputtedString = "Find the final amount if the principal amount is 2000 if the interest rate is 3% and is for 5 years. "
-compute_word_problem(inputtedString)

@@ -6,6 +6,7 @@ from numpy import result_type
 import websockets
 import pyaudio
 from dotenv import load_dotenv
+from dotenv import find_dotenv
 import os
 
 load_dotenv()
@@ -25,7 +26,7 @@ stream = p.open(
     frames_per_buffer=FRAMES_PER_BUFFER
 )
 
-auth_key = os.getenv(auth_key)
+auth_key = os.getenv(find_dotenv())
 
 # the AssemblyAI endpoint we're going to hit
 URL = "wss://api.assemblyai.com/v2/realtime/ws?sample_rate=16000"
