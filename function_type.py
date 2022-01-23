@@ -21,6 +21,6 @@ def get_function_from_string(s):
     elif max(li) == mx:
         return "Maximize Revenue"
     elif max(li) == mn:
-        return "Minimum Revenue"
+        return "Minimize Revenue"
     elif max(li) == intrs:
         return "Interest"

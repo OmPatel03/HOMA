@@ -7,7 +7,10 @@
             "base_personcount": ["attendance", "consumers", "count", "number", "original", "people", "amount"],
             "delta_personcount": ["increase", "decrease", "fewer", "more", "demand", "want", "down", "up", "people"]
         },
-        "functionName": "MaximizeRevenue_function"
+        "functionName": "MaximizeRevenue_function",
+        "formattedString": "The max revenue will occur when the item's price is {}",
+        "formattedVariables": [-1],
+        "variableFormats": ["${:.2f}"]
     }
     ,
     "Interest": {
@@ -16,6 +19,9 @@
             "interest_rate" : ["interest", "rate", "compound"],
             "time" : ["years"]
         },
-        "functionName": "Interest_function"
+        "functionName": "Interest_function",
+        "formattedString": "After {} years, the final amount in the accound will be {}",
+        "formattedVariables": [3, -1],
+        "variableFormats": ["{}", "${:.2f}"]
     }
 }
