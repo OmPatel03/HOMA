@@ -18,7 +18,7 @@ def compute_word_problem(problemString):
 
         # Unknown
         if (functionType == "I do not know what the problem is asking me to do"):
-            return functionType
+            return (functionType, 0)
 
         #
         # Seperate the Speech Speach string into it's key variables based on the type of function
@@ -54,7 +54,8 @@ def compute_word_problem(problemString):
 
     # Overrall Error Handeling
     except Exception as e:
-        return "I cannot answer that type of question."
+
+        return ("I cannot answer that )type of question.", 1)
 
 #test = "if for every 1 dollar increase there will be 10 less people that buy the porduct and if the product costs 5 dollars originally and 10 people buy it now, maximum revenue"
 #print(compute_word_problem(test))
