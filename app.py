@@ -1,5 +1,4 @@
 
-from cv2 import computeCorrespondEpilines
 from nbformat import read
 from loadjson import getProblemDictionary
 #from speech import *;
