@@ -48,4 +48,9 @@ if (__name__ == "__main__"):
     # Create a stringified version to send back to the person.
 
     if user_input:
-        st.markdown("#### " + compute_word_problem(user_input))
+        final, variables = compute_word_problem(user_input)
+
+        for variable in variables:
+            st.markdown(variable + " : " + str(variables[variable]))
+
+        st.markdown("#### " + compute_word_problem(final))
