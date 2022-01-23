@@ -26,7 +26,9 @@ stream = p.open(
     frames_per_buffer=FRAMES_PER_BUFFER
 )
 
-auth_key = os.getenv(find_dotenv())
+load_dotenv(find_dotenv())
+
+auth_key = os.getenv("auth_key")
 
 # the AssemblyAI endpoint we're going to hit
 URL = "wss://api.assemblyai.com/v2/realtime/ws?sample_rate=16000"
@@ -74,10 +76,10 @@ async def send_receive():
                 try:
                     result_str = await _ws.recv()
                     if json.loads(result_str)['message_type'] == "FinalTranscript":
-                        msg = json.loads(result_str)['text']
-                        with open("text.txt", "w") as f:
-                            f.write(msg)
                         working = not working
+                    msg = json.loads(result_str)['text']
+                    with open("text.txt", "w") as f:
+                        f.write(msg)
 
                 except websockets.exceptions.ConnectionClosedError as e:
                     print(e)
@@ -91,3 +93,6 @@ async def send_receive():
 
 def run():
     asyncio.run(send_receive())
+
+
+run()

@@ -16,7 +16,7 @@ def compute_word_problem(problemString):
         functionType = get_function_from_string(problemString)
         print("Function type identified")
 
-        #Unknown
+        # Unknown
         if (functionType == "I do not know what the problem is asking me to do"):
             return functionType
 
@@ -27,7 +27,8 @@ def compute_word_problem(problemString):
 
         #
         # Exectue the function using the variables
-        problemScript = (getFromKeyDict(functionType, "functionName", problemDict))
+        problemScript = (getFromKeyDict(
+            functionType, "functionName", problemDict))
         result = runScript(problemScript, variableList)
         print("Variable result calculated")
 
@@ -42,14 +43,16 @@ def compute_word_problem(problemString):
         formattedString = formatStringFromVars(
             problemFormatString, problemVariablesToFill, problemVariableFormats, result)
 
-        #Collect Variables Into a Dictonary
-        variableNames = list(getFromKeyDict(functionType, "variable_keywords", problemDict).keys())
-        answerVarDict = answer_create_variable_name_dict(variableNames, variableList)
+        # Collect Variables Into a Dictonary
+        variableNames = list(getFromKeyDict(
+            functionType, "variable_keywords", problemDict).keys())
+        answerVarDict = answer_create_variable_name_dict(
+            variableNames, variableList)
 
         finalResult = (formattedString, answerVarDict)
         return finalResult
 
-    #Overrall Error Handeling
+    # Overrall Error Handeling
     except Exception as e:
         return "I cannot answer that type of question."
 

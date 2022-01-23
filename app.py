@@ -1,5 +1,6 @@
 
 from cv2 import computeCorrespondEpilines
+from nbformat import read
 from loadjson import getProblemDictionary
 #from speech import *;
 from image_reader import readImage
@@ -19,13 +20,11 @@ def get_speech():
 # Main Loop
 if (__name__ == "__main__"):
     st.title("HOMA")
-    col1, col2 = st.columns(2)
 
-    with col1:
-        user_input = st.text_input("Math Problem")
-    with col2:
-        if st.button("Record speech"):
-            user_input = get_speech()
+    user_input = st.text_input("Math Problem")
+    if st.button("Record speech"):
+        st.write("Recording...")
+        user_input = get_speech()
 
     #
     # Import
