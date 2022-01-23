@@ -1,4 +1,7 @@
 def get_function_from_string(s):
+
+    s = s.lower()
+
     mx = 0
     intrs = 0
     mn = 0
@@ -17,7 +20,7 @@ def get_function_from_string(s):
             intrs += 1
     li = (mx, mn, intrs)
     if max(li) == 0:
-        return "This Type of function cannot be evaluated yet"
+        return "I do not know what the problem is asking me to do."
     elif max(li) == mx:
         return "Maximize Revenue"
     elif max(li) == mn:

@@ -2,15 +2,15 @@
     "Maximize Revenue": {
         "problem_keywords": ["Maximize"],
         "variable_keywords": {
-            "Original Item Price": ["price", "cost", "item"], 
-            "Change in Item Price Multilpier": ["increase", "decrease", "more", "less", "dollar", "cent", "cost", "price", "item", "ever"],
-            "Original Customer Base Size": ["attendance", "consumers", "count", "number", "original", "people", "amount"],
+            "Original Item Price": ["price", "cost", "item", "product"], 
+            "Change in Item Price Multilpier": ["increase", "decrease", "more", "less", "dollar", "cent", "cost", "price", "item", "ever", "product"],
+            "Original Customer Base Size": ["attendance", "consumers", "count", "number", "original", "people", "amount", "person"],
             "Customer Reduction Per Price Increase": ["increase", "decrease", "fewer", "more", "demand", "want", "down", "up", "people"]
         },
         "functionName": "MaximizeRevenue_function",
-        "formattedString": "The max revenue will occur when the item's price is {}",
-        "formattedVariables": [-1],
-        "variableFormats": ["${:.2f}"]
+        "formattedString": "The max revenue will occur when the item's price is {}, with a maximum revenue of {}",
+        "formattedVariables": [-1, -2],
+        "variableFormats": ["${:.2f}", "${:.2f}"]
     }
     ,
     "Interest": {

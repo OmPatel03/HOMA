@@ -1,7 +1,6 @@
 from function_type import get_function_from_string
 from setupvars import create_list
-from answer import runScript
-from answer import formatStringFromVars
+from answer import *
 from loadjson import *
 
 
@@ -15,15 +14,22 @@ def compute_word_problem(problemString):
     # Decide what type of function the string denotes
     try:
         functionType = get_function_from_string(problemString)
+        print("Function type identified")
+
+        #Unknown
+        if (functionType == "I do not know what the problem is asking me to do"):
+            return functionType
 
         #
         # Seperate the Speech Speach string into it's key variables based on the type of function
         variableList = create_list(functionType, problemString)
+        print("Variable list created")
 
         #
         # Exectue the function using the variables
         problemScript = (getFromKeyDict(functionType, "functionName", problemDict))
         result = runScript(problemScript, variableList)
+        print("Variable result calculated")
 
         #
         # Create a stringified version to send back to the person.
@@ -37,15 +43,15 @@ def compute_word_problem(problemString):
             problemFormatString, problemVariablesToFill, problemVariableFormats, result)
 
         #Collect Variables Into a Dictonary
-        answerVarDict = {}
         variableNames = list(getFromKeyDict(functionType, "variable_keywords", problemDict).keys())
-        for i in range(len(variableList)):
-            answerVarDict[variableNames[i]] = variableList[i];
+        answerVarDict = answer_create_variable_name_dict(variableNames, variableList)
 
         finalResult = (formattedString, answerVarDict)
-        print(finalResult)
         return finalResult
 
     #Overrall Error Handeling
-    except Exception:
+    except Exception as e:
         return "I cannot answer that type of question."
+
+test = "if for every 1 dollar increase there will be 10 less people that buy the porduct and if the product costs 5 dollars originally and 10 people buy it now, maximum revenue"
+print(compute_word_problem(test))

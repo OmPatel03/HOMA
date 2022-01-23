@@ -1,7 +1,7 @@
 
 def MaximizeRevenue_function(listOfVariables):
     '''
-        Returns the price of some item which maximizes the revenue based off the demand.
+        Returns the price of some item which maximizes the revenue based off the demand, and the associated maximum revenue.
     '''
 
     # Unpack from given variable list
@@ -20,14 +20,15 @@ def MaximizeRevenue_function(listOfVariables):
 
     # Calculate max Item price
     maxRevenueItemPrice = base_itemprice + x*delta_itemprice
-
+    maxRevenue = maxRevenueItemPrice * base_personcount-x*delta_personcount
+    
     # Return Value
-    return maxRevenueItemPrice
+    return [maxRevenueItemPrice, maxRevenue]
 
 
 def Interest_function(listOfVariables):
     """
-    Returns the final amount after a compounding interest period.
+    Returns the final amount after a compounding interest period. (array for formatting)
     """
 
     principle = listOfVariables[0]
@@ -36,4 +37,4 @@ def Interest_function(listOfVariables):
 
     final_amount = principle * (1 + interest_rate)**time
 
-    return final_amount
+    return [final_amount]
